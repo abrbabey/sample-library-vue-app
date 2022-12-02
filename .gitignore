@@ -1,3 +1,6 @@
+# Ignore package-lock clutter for this sample app
+package-lock.json
+
 # Logs
 logs
 *.log
