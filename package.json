@@ -1,10 +1,28 @@
 {
-    "name": "sample-library-vue-app",
-    "version": "0.0.0",
+    "name": "@abrbabey/sample-library-vue-app",
+    "version": "0.0.1",
+    "description": "Sample minimal Vue app packaged as a self-contained library.",
+    "author": "abrbabey",
+    "license": "MIT",
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/"
+    },
     "type": "module",
+    "files": [
+        "dist"
+    ],
+    "main": "dist/library.umd.cjs",
+    "module": "dist/library.js",
+    "exports": {
+        ".": {
+            "import": "./dist/library.js",
+            "require": "./dist/library.umd.cjs"
+        }
+    },
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "prepublishOnly": "npm run build"
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "^3.2.0",
